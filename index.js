@@ -2,6 +2,7 @@ let title = document.getElementById("title");
 let options = document.getElementById("option-list");
 let startBtn = document.getElementById("start-btn");
 let optionList = document.querySelectorAll('#option-list li')
+let startScreen = document.querySelector('.start-screen')
 
 
 
@@ -18,7 +19,13 @@ function start() {
         option.textContent = players[index];
     })
 
+    startBtn.style.display = "none"
 
+    let myDiv = document.createElement('div')
+
+    startScreen.appendChild(myDiv)
+
+    console.log(startScreen)
 }
 
 startBtn.addEventListener('click', start)

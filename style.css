@@ -60,7 +60,34 @@ body {
   background: #ffd54a;
   transform: translateY(-3px);
 }
-.new_button{
+.new_button {
   background-color: transparent;
   padding: 20px;
+}
+.prev-btn {
+  background: white;
+  color: #0b6e3d;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+}
+.prev-btn:hover {
+  background: #e6b800;
+}
+.prev-btn {
+  margin-right: 15px;
+}
+
+.next-btn {
+  background: #ffd54a;
+  color: black;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+}
+.next-btn:hover {
+  background: #e6b800;
+}
+.next-btn {
+  margin-left: 15px;
 }

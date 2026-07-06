@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b3d0b;
+  font-family: Arial, sans-serif;
+}
+
+.start-screen {
+  text-align: center;
+}
+
+.start-screen h1 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#start-btn {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  background: #ffcc00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#start-btn:hover {
+  background: #e6b800;
+}

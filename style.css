@@ -37,6 +37,26 @@ body {
   background: #e6b800;
 }
 
-#option-list{
+#option-list {
   display: none;
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 0;
+  list-style: none;
+}
+
+#option-list li {
+  background: #ffffff;
+  color: #111;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  text-align: left;
+}
+
+#option-list li:hover {
+  background: #ffd54a;
+  transform: translateY(-3px);
 }

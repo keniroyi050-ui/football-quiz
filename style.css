@@ -60,3 +60,7 @@ body {
   background: #ffd54a;
   transform: translateY(-3px);
 }
+.new_button{
+  background-color: transparent;
+  padding: 20px;
+}

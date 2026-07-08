@@ -7,130 +7,167 @@ let startScreen = document.querySelector(".start-screen");
 let players = ["messi", "mbappe", "di maria", "kolo muani"];
 
 const quiz = [
-    {
-        question: "Who scored the winning goal at World Cup Final 2022?",
-        options: ["Messi", "Mbappe", "Di Maria", "Kolo Muani"],
-    },
-    {
-        question: "Which country won the 2022 FIFA World Cup?",
-        options: ["France", "Argentina", "Brazil", "Croatia"],
-    },
-    {
-        question: "Who won the Golden Boot at the 2022 World Cup?",
-        options: ["Messi", "Mbappe", "Giroud", "Alvarez"],
-    },
-    {
-        question: "Which country hosted the 2022 World Cup?",
-        options: ["Qatar", "USA", "Russia", "Germany"],
-    },
-    {
-        question: "How many players does each team have on the field?",
-        options: ["10", "11", "12", "9"],
-    },
-    {
-        question: "Which player is known as CR7?",
-        options: ["Messi", "Ronaldo", "Neymar", "Benzema"],
-    },
-    {
-        question: "Which club has won the most Champions League titles?",
-        options: ["Barcelona", "Liverpool", "Real Madrid", "Bayern Munich"],
-    },
-    {
-        question: "What color card sends a player off?",
-        options: ["Yellow", "Blue", "Red", "Green"],
-    },
-    {
-        question: "How long is a normal football match?",
-        options: ["80", "90", "100", "120"],
-    },
-    {
-        question: "Which country has won the most World Cups?",
-        options: ["Germany", "Brazil", "Italy", "Argentina"],
-    },
-    {
-        question: "Who is Barcelona's all-time top scorer?",
-        options: ["Suarez", "Messi", "Ronaldinho", "Xavi"],
-    },
-    {
-        question: "How many yellow cards equal a red card?",
-        options: ["1", "2", "3", "4"],
-    },
-    {
-        question: "Who won Euro 2020?",
-        options: ["England", "Italy", "Spain", "France"],
-    },
-    {
-        question: "Who won the Ballon d'Or 2023?",
-        options: ["Haaland", "Mbappe", "Messi", "De Bruyne"],
-    },
-    {
-        question: "Which position can use hands?",
-        options: ["Goalkeeper", "Defender", "Midfielder", "Striker"],
-    },
-    {
-        question: "How many points is a league win worth?",
-        options: ["1", "2", "3", "4"],
-    },
-    {
-        question: "The Premier League belongs to which country?",
-        options: ["Spain", "England", "Germany", "Italy"],
-    },
-    {
-        question: "Who scored the Hand of God goal?",
-        options: ["Pele", "Maradona", "Messi", "Ronaldo"],
-    },
-    {
-        question: "Which club does Erling Haaland play for?",
-        options: ["Barcelona", "PSG", "Manchester City", "Real Madrid"],
-    },
-    {
-        question: "A foul inside the penalty area results in what?",
-        options: ["Corner", "Penalty", "Throw In", "Goal Kick"],
-    },
+  {
+    question: "Who scored the winning goal at the 2022 FIFA World Cup Final?",
+    options: [
+      "Lionel Messi",
+      "Kylian Mbappé",
+      "Ángel Di María",
+      "Randal Kolo Muani",
+    ],
+    answer: "Ángel Di María",
+  },
+  {
+    question: "Which country won the 2022 FIFA World Cup?",
+    options: ["France", "Argentina", "Croatia", "Brazil"],
+    answer: "Argentina",
+  },
+  {
+    question: "Who won the Golden Boot at the 2022 World Cup?",
+    options: [
+      "Lionel Messi",
+      "Julián Álvarez",
+      "Kylian Mbappé",
+      "Olivier Giroud",
+    ],
+    answer: "Kylian Mbappé",
+  },
+  {
+    question: "Which country hosted the 2022 FIFA World Cup?",
+    options: ["Qatar", "Russia", "UAE", "Saudi Arabia"],
+    answer: "Qatar",
+  },
+  {
+    question: "How many players are on the field for one team?",
+    options: ["9", "10", "11", "12"],
+    answer: "11",
+  },
+  {
+    question: "Which player is known as CR7?",
+    options: ["Lionel Messi", "Cristiano Ronaldo", "Neymar", "Luka Modrić"],
+    answer: "Cristiano Ronaldo",
+  },
+  {
+    question: "Which club has won the most UEFA Champions League titles?",
+    options: ["Barcelona", "Liverpool", "Real Madrid", "Bayern Munich"],
+    answer: "Real Madrid",
+  },
+  {
+    question: "What color card means a player is sent off?",
+    options: ["Yellow", "Blue", "Red", "Green"],
+    answer: "Red",
+  },
+  {
+    question: "How long is a regular football match?",
+    options: ["80 minutes", "90 minutes", "100 minutes", "120 minutes"],
+    answer: "90 minutes",
+  },
+  {
+    question: "Which country has won the most FIFA World Cups?",
+    options: ["Germany", "Argentina", "Italy", "Brazil"],
+    answer: "Brazil",
+  },
+  {
+    question: "Who is Barcelona's all-time top scorer?",
+    options: ["Luis Suárez", "Ronaldinho", "Lionel Messi", "Xavi"],
+    answer: "Lionel Messi",
+  },
+  {
+    question:
+      "What is the maximum number of yellow cards before a red in one match?",
+    options: ["1", "2", "3", "4"],
+    answer: "2",
+  },
+  {
+    question: "Which country won Euro 2020?",
+    options: ["England", "Spain", "Italy", "Portugal"],
+    answer: "Italy",
+  },
+  {
+    question: "Who won the Ballon d'Or in 2023?",
+    options: [
+      "Erling Haaland",
+      "Kylian Mbappé",
+      "Lionel Messi",
+      "Kevin De Bruyne",
+    ],
+    answer: "Lionel Messi",
+  },
+  {
+    question: "Which position is allowed to use hands?",
+    options: ["Defender", "Midfielder", "Goalkeeper", "Striker"],
+    answer: "Goalkeeper",
+  },
+  {
+    question: "How many points is a win worth in football leagues?",
+    options: ["1", "2", "3", "4"],
+    answer: "3",
+  },
+  {
+    question: "Which country is home to the Premier League?",
+    options: ["Spain", "Germany", "England", "France"],
+    answer: "England",
+  },
+  {
+    question: "Who scored the 'Hand of God' goal?",
+    options: ["Pelé", "Diego Maradona", "Ronaldinho", "Ronaldo Nazário"],
+    answer: "Diego Maradona",
+  },
+  {
+    question: "Which club does Erling Haaland play for?",
+    options: ["Real Madrid", "Manchester City", "PSG", "Barcelona"],
+    answer: "Manchester City",
+  },
+  {
+    question: "What is awarded when a foul occurs inside the penalty box?",
+    options: ["Corner Kick", "Free Kick", "Penalty Kick", "Throw-in"],
+    answer: "Penalty Kick",
+  },
 ];
 
 let currentQuestionIndex = 0;
 function start() {
+  options.style.display = "block";
 
-    options.style.display = "block";
+  startBtn.style.display = "none";
 
-    startBtn.style.display = "none";
+  showQuestion();
 
-    showQuestion();
+  let myDiv = document.createElement("div");
 
-    let myDiv = document.createElement("div");
+  startScreen.appendChild(myDiv);
 
-    startScreen.appendChild(myDiv);
+  let button = document.createElement("button");
+  button.classList.add("prev-btn");
+  myDiv.appendChild(button);
+  button.textContent = "previous";
 
+  let button2 = document.createElement("button");
+  button2.classList.add("next-btn");
+  myDiv.appendChild(button2);
+  button2.textContent = "Next";
 
-    let button = document.createElement("button");
-    button.classList.add("prev-btn");
-    myDiv.appendChild(button);
-    button.textContent = "previous";
+  button2.addEventListener("click", function () {
+    if (currentQuestionIndex < quiz.length - 1) {
+      currentQuestionIndex++;
+      showQuestion();
+    }
+  });
 
-    let button2 = document.createElement("button");
-    button2.classList.add("next-btn");
-    myDiv.appendChild(button2);
-    button2.textContent = "Next";
-
-
-    button2.addEventListener("click", function () {
-        if (currentQuestionIndex < quiz.length - 1) {
-            currentQuestionIndex++;
-            showQuestion();
-        }
-    });
-
+  button.addEventListener("click", function () {
+    if (currentQuestionIndex > 0) {
+      currentQuestionIndex--;
+      showQuestion();
+    }
+  });
 }
 
 const showQuestion = () => {
-    title.textContent = quiz[currentQuestionIndex].question;
+  title.textContent = `Question ${currentQuestionIndex + 1}: ${quiz[currentQuestionIndex].question}`;
 
-
-
-    optionList.forEach((option, index) => {
-        option.textContent = quiz[currentQuestionIndex].options[index];
-    });
-}
+  optionList.forEach((option, index) => {
+    option.textContent = quiz[currentQuestionIndex].options[index];
+  });
+};
 
 startBtn.addEventListener("click", start);

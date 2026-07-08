@@ -89,8 +89,10 @@ const quiz = [
   },
 ];
 
+let currentQuestionIndex = 0;
 function start() {
-  title.textContent = "1. Who scored the winning goal at world cup final 2022";
+  currentQuestionIndex = 0;
+  title.textContent = quiz[currentQuestionIndex].question;
 
   options.style.display = "block";
 
@@ -115,10 +117,14 @@ function start() {
   myDiv.appendChild(button2);
   button2.textContent = "Next";
   console.log(button2);
-  
-  for (let i = 0; i < quiz.length; i++) {
-    title.textContent = quiz[i].question;
-  }
+
+  button2.addEventListener("click", function () {
+    if (currentQuestionIndex < quiz.length - 1) {
+      currentQuestionIndex++;
+      title.textContent = quiz[currentQuestionIndex].question;
+    }
+  });
+
 }
 
 startBtn.addEventListener("click", start);

@@ -115,6 +115,10 @@ function start() {
   myDiv.appendChild(button2);
   button2.textContent = "Next";
   console.log(button2);
+  
+  for (let i = 0; i < quiz.length; i++) {
+    title.textContent = quiz[i].question;
+  }
 }
 
 startBtn.addEventListener("click", start);

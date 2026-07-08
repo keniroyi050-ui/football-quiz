@@ -60,6 +60,12 @@ body {
   background: #ffd54a;
   transform: translateY(-3px);
 }
+#option-list li.selected {
+  background: #ffd54a;
+  color: #111;
+  border: 2px solid #fff;
+}
+
 .new_button {
   background-color: transparent;
   padding: 20px;

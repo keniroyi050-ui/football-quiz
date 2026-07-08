@@ -167,6 +167,13 @@ const showQuestion = () => {
 
   optionList.forEach((option, index) => {
     option.textContent = quiz[currentQuestionIndex].options[index];
+
+    option.classList.remove("selected");
+
+    option.onclick = function () {
+      optionList.forEach((opt) => opt.classList.remove("selected"));
+      option.classList.add("selected");
+    };
   });
 };
 

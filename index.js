@@ -126,12 +126,16 @@ const quiz = [
 ];
 
 let currentQuestionIndex = 0;
+
+let userAnswers = new Array(quiz.length).fill(null);
+let quizSubmitted = false;
+
+let button2;
+
 function start() {
   options.style.display = "block";
 
   startBtn.style.display = "none";
-
-  showQuestion();
 
   let myDiv = document.createElement("div");
 
@@ -142,13 +146,18 @@ function start() {
   myDiv.appendChild(button);
   button.textContent = "previous";
 
-  let button2 = document.createElement("button");
+  button2 = document.createElement("button");
   button2.classList.add("next-btn");
   myDiv.appendChild(button2);
   button2.textContent = "Next";
 
+  showQuestion();
+
   button2.addEventListener("click", function () {
-    if (currentQuestionIndex < quiz.length - 1) {
+    if (currentQuestionIndex === quiz.length - 1) {
+      quizSubmitted = true;
+      showQuestion();
+    } else if (currentQuestionIndex < quiz.length - 1) {
       currentQuestionIndex++;
       showQuestion();
     }
@@ -165,14 +174,44 @@ function start() {
 const showQuestion = () => {
   title.textContent = `Question ${currentQuestionIndex + 1}: ${quiz[currentQuestionIndex].question}`;
 
+  button2.textContent =
+    currentQuestionIndex === quiz.length - 1 ? "Submit" : "Next";
+
   optionList.forEach((option, index) => {
     option.textContent = quiz[currentQuestionIndex].options[index];
 
     option.classList.remove("selected");
 
+    option.classList.remove("correct", "wrong");
+
+    if (quizSubmitted) {
+      const optionText = quiz[currentQuestionIndex].options[index];
+      const currentAnswer = quiz[currentQuestionIndex].answer;
+      const savedPick = userAnswers[currentQuestionIndex];
+
+      if (optionText === currentAnswer) {
+        option.classList.add("correct");
+      } else if (optionText === savedPick && savedPick !== currentAnswer) {
+        option.classList.add("wrong");
+      }
+
+      option.onclick = null;
+      return;
+    }
+
+    if (
+      userAnswers[currentQuestionIndex] ===
+      quiz[currentQuestionIndex].options[index]
+    ) {
+      option.classList.add("selected");
+    }
+
     option.onclick = function () {
       optionList.forEach((opt) => opt.classList.remove("selected"));
       option.classList.add("selected");
+
+      userAnswers[currentQuestionIndex] =
+        quiz[currentQuestionIndex].options[index];
     };
   });
 };

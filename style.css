@@ -66,6 +66,15 @@ body {
   border: 2px solid #fff;
 }
 
+#option-list li.correct {
+  background-color: #28a745;
+  color: white;
+}
+
+#option-list li.wrong {
+  background-color: #dc3545;
+  color: white;
+}
 .new_button {
   background-color: transparent;
   padding: 20px;
@@ -96,4 +105,18 @@ body {
 }
 .next-btn {
   margin-left: 15px;
+}
+.submit-btn {
+  background: #28a745;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #1e7e34;
 }

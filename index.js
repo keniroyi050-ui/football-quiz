@@ -131,32 +131,49 @@ let userAnswers = new Array(quiz.length).fill(null);
 let quizSubmitted = false;
 
 let button2;
+let navDiv;
+let resultScreen;
+let scoreText;
+let viewAnswersBtn;
 
 function start() {
   options.style.display = "block";
 
   startBtn.style.display = "none";
 
-  let myDiv = document.createElement("div");
+  navDiv = document.createElement("div");
 
-  startScreen.appendChild(myDiv);
+  startScreen.appendChild(navDiv);
 
   let button = document.createElement("button");
   button.classList.add("prev-btn");
-  myDiv.appendChild(button);
+  navDiv.appendChild(button);
   button.textContent = "previous";
 
   button2 = document.createElement("button");
   button2.classList.add("next-btn");
-  myDiv.appendChild(button2);
+  navDiv.appendChild(button2);
   button2.textContent = "Next";
+
+  resultScreen = document.createElement("div");
+  resultScreen.classList.add("result-screen");
+  resultScreen.style.display = "none";
+  startScreen.appendChild(resultScreen);
+
+  scoreText = document.createElement("h2");
+  resultScreen.appendChild(scoreText);
+
+  viewAnswersBtn = document.createElement("button");
+  viewAnswersBtn.classList.add("view-answers-btn");
+  viewAnswersBtn.textContent = "View Answers";
+  resultScreen.appendChild(viewAnswersBtn);
 
   showQuestion();
 
   button2.addEventListener("click", function () {
     if (currentQuestionIndex === quiz.length - 1) {
       quizSubmitted = true;
-      showQuestion();
+      showResults();
     } else if (currentQuestionIndex < quiz.length - 1) {
       currentQuestionIndex++;
       showQuestion();
@@ -169,6 +186,37 @@ function start() {
       showQuestion();
     }
   });
+
+  viewAnswersBtn.addEventListener("click", function () {
+    resultScreen.style.display = "none";
+    title.style.display = "block";
+    options.style.display = "block";
+    navDiv.style.display = "block";
+
+    currentQuestionIndex = 0;
+    showQuestion();
+  });
+}
+
+function calculateScore() {
+  let score = 0;
+  quiz.forEach((q, index) => {
+    if (userAnswers[index] === q.answer) {
+      score++;
+    }
+  });
+  return score;
+}
+
+function showResults() {
+  title.style.display = "none";
+  options.style.display = "none";
+  navDiv.style.display = "none";
+
+  let score = calculateScore();
+  scoreText.textContent = `You scored ${score} out of ${quiz.length}`;
+
+  resultScreen.style.display = "block";
 }
 
 const showQuestion = () => {

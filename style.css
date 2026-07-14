@@ -143,3 +143,50 @@ body {
 .view-answers-btn:hover {
   background: #e6b800;
 }
+body {
+  background: linear-gradient(-45deg, #0b3d0b, #0f5c0f, #0b3d0b, #073607);
+  background-size: 400% 400%;
+  animation: bgShift 8s ease infinite;
+}
+
+@keyframes bgShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.ball {
+  display: inline-block;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.restart-btn {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.restart-btn:hover {
+  background: #b82c39;
+}

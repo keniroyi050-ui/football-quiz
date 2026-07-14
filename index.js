@@ -4,8 +4,6 @@ let startBtn = document.getElementById("start-btn");
 let optionList = document.querySelectorAll("#option-list li");
 let startScreen = document.querySelector(".start-screen");
 
-let players = ["messi", "mbappe", "di maria", "kolo muani"];
-
 const quiz = [
   {
     question: "Who scored the winning goal at the 2022 FIFA World Cup Final?",
@@ -135,6 +133,7 @@ let navDiv;
 let resultScreen;
 let scoreText;
 let viewAnswersBtn;
+let restartBtn;
 
 function start() {
   options.style.display = "block";
@@ -168,6 +167,12 @@ function start() {
   viewAnswersBtn.textContent = "View Answers";
   resultScreen.appendChild(viewAnswersBtn);
 
+  restartBtn = document.createElement("button");
+  restartBtn.classList.add("restart-btn");
+  restartBtn.textContent = "Restart Quiz";
+  restartBtn.style.display = "none";
+  startScreen.appendChild(restartBtn);
+
   showQuestion();
 
   button2.addEventListener("click", function () {
@@ -192,8 +197,23 @@ function start() {
     title.style.display = "block";
     options.style.display = "block";
     navDiv.style.display = "block";
+    restartBtn.style.display = "inline-block";
 
     currentQuestionIndex = 0;
+    showQuestion();
+  });
+
+  restartBtn.addEventListener("click", function () {
+    currentQuestionIndex = 0;
+    userAnswers = new Array(quiz.length).fill(null);
+    quizSubmitted = false;
+
+    resultScreen.style.display = "none";
+    title.style.display = "block";
+    options.style.display = "block";
+    navDiv.style.display = "block";
+    restartBtn.style.display = "none";
+
     showQuestion();
   });
 }
@@ -217,6 +237,7 @@ function showResults() {
   scoreText.textContent = `You scored ${score} out of ${quiz.length}`;
 
   resultScreen.style.display = "block";
+  restartBtn.style.display = "inline-block";
 }
 
 const showQuestion = () => {
